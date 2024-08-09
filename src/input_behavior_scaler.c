@@ -100,12 +100,12 @@ static int scaler_keymap_binding_pressed(struct zmk_behavior_binding *binding,
         int16_t div = binding->param2;
         int16_t delta = data->data.delta;
         int16_t sval = delta * mul / div;
-        // LOG_DBG("* %d / %d > delta: %d => %d", mul, div, delta, sval);
+        LOG_DBG("* %d / %d > delta: %d => %d", mul, div, delta, sval);
         if (sval) {
             data->data.mode = IB_SCALER_XY_DATA_MODE_NONE;
             data->data.delta = 0;
             evt->value = sval;
-            // LOG_DBG("* %d / %d > delta: %d => %d", mul, div, delta, sval);
+            LOG_DBG("sval: * %d / %d > delta: %d => %d", mul, div, delta, sval);
             return ZMK_BEHAVIOR_TRANSPARENT;
         } else {
             return ZMK_BEHAVIOR_OPAQUE;
