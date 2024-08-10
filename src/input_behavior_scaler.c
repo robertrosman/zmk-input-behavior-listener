@@ -108,6 +108,7 @@ static int scaler_keymap_binding_pressed(struct zmk_behavior_binding *binding,
             LOG_DBG("sval: * %d / %d > delta: %d => %d", mul, div, delta, sval);
             return ZMK_BEHAVIOR_TRANSPARENT;
         } else {
+            LOG_DBG("sending ZMK_BEHAVIOR_OPAQUE, shouldn't scroll");
             return ZMK_BEHAVIOR_OPAQUE;
         }
     }
