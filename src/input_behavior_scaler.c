@@ -109,6 +109,7 @@ static int scaler_keymap_binding_pressed(struct zmk_behavior_binding *binding,
             return ZMK_BEHAVIOR_TRANSPARENT;
         } else {
             LOG_DBG("sending ZMK_BEHAVIOR_OPAQUE, shouldn't scroll");
+            evt->value = 0; // Explicitly override value, even though the event should be suppressed
             return ZMK_BEHAVIOR_OPAQUE;
         }
     }
